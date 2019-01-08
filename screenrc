@@ -1,0 +1,44 @@
+startup_message off
+altscreen on
+term screen-256color
+bind ',' prev
+bind '.' next
+
+vbell off
+
+#change the hardstatus settings to give an window list at the bottom of the                                                                        
+#screen, with the time and date and with the current window highlighted                                                                            
+hardstatus alwayslastline
+##hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %{= kG}%-=%c:%s%{-}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d.%m.%Y %{W}%c %{g}]'
+
+chdir /home/openhab/ottspot_openhab/src/items
+screen -t items 1 bash
+
+chdir /home/openhab/ottspot_openhab/src/sitemaps
+screen -t sitemaps 2 bash
+
+chdir /home/openhab/ottspot_openhab/src/rules
+screen -t rules 3 bash
+
+chdir /home/openhab/ottspot_openhab/src/things
+screen -t things 4 bash
+
+chdir /home/openhab/ottspot_openhab/src/services
+screen -t services 5 bash
+
+chdir /home/openhab/ottspot_openhab/src/transform
+screen -t transform 6 bash
+
+chdir /home/openhab/ottspot_openhab/src/persistence
+screen -t persistence 7 bash
+
+chdir /home/openhab/ottspot_openhab/src/icons/classic
+screen -t icons 8 bash
+
+chdir /home/openhab/ottspot_openhab/tools
+screen -t tools 9 bash
+
+chdir /home/openhab/ottspot_openhab/src
+screen -t logs 0 openhab-cli showlogs
+
