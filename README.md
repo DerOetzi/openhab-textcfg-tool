@@ -1,5 +1,6 @@
-= openhab-textcfg-tool
-== Description
+# openhab-textcfg-tool
+
+## Description
 
 This is a toolset to manage the Smart Home Software OpenHAB with text configuration files.
 The advantage of using text files is you can use git as version management.
@@ -8,24 +9,24 @@ There is although included a small template-engine included so you can reuse par
 
 And you will be able to use a public git-repository to share your configuration without disposing any sensible data.
 
-== INSTALL
+## INSTALL
 
 TBD
 
-== Toolset
+## Toolset
 
 TBD
 
-== Template Engine
+## Template Engine
 
-=== Secret data
-
-TBD
-
-=== Colors
+### Secret data
 
 TBD
 
-=== Parts
+### Colors
+
+TBD
+
+### Parts
 
 TBD
