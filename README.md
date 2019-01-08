@@ -1,0 +1,1 @@
+# openhab-textcfg-tool
