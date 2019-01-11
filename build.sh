@@ -13,6 +13,7 @@ fi
 
 PROCESS=$1
 if [ "$PROCESS" == "icons" ]; then
+    mkdir -p $TARGET/$PROCESS/classic
     echo Clean $TARGET/$PROCESS
     rm -rf $TARGET/$PROCESS
     mkdir -p $TARGET/$PROCESS
@@ -27,6 +28,7 @@ if [ "$PROCESS" == "icons" ]; then
         rsvg-convert $i -w 64 -h 64 -o `echo $i | sed -e 's/svg$/png/'`; 
     done
 elif [ -f "$SRC/$PROCESS" ] ; then
+    mkdir -p $(dirname $TARGET/$PROCESS)
     echo Clean $TARGET/$PROCESS
     rm -f $TARGET/$PROCESS
     echo Copy File to $TARGET/$PROCESS
