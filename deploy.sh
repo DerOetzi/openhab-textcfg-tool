@@ -13,9 +13,9 @@ PROCESS=$1
 
 $DIRECTORY/tools/build.sh $PROCESS
 
-echo Copy files to /etc/openhab2/$PROCESS
+echo Copy files to /swarm/etc/openhab/$PROCESS
 if [ -d "$TARGET/$PROCESS" ]; then
-    cp -r -v $TARGET/$PROCESS /etc/openhab2/
+    cp -r -v $TARGET/$PROCESS /swarm/etc/openhab/
 else
-    cp -v $TARGET/$PROCESS /etc/openhab2/$PROCESS
+    cp -v $TARGET/$PROCESS /swarm/etc/openhab/$PROCESS
 fi
