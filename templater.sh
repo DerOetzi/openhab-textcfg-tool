@@ -4,6 +4,8 @@ set -e
 DIRECTORY=`realpath $(dirname $0)/..`
 CACHE=`realpath $DIRECTORY/cache`
 
+mkdir -p $CACHE;
+
 PROCESS=$1
 partsdir=`realpath ${DIRECTORY}/src/$(dirname $PROCESS)/parts`
 extension="${PROCESS##*.}"
