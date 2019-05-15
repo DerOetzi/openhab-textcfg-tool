@@ -13,7 +13,7 @@ extension="${PROCESS##*.}"
 function replace_parts() {
     IFS=$'\n'
     local srcfile=$1
-    local parts=$(grep -oE '\{\{[A-Za-z0-9_&;",\.\(\)% ]+\}\}' $srcfile | sort | uniq | sed -e 's/^{{//' -e 's/}}$//')
+    local parts=$(grep -oE '\{\{[A-Za-z0-9_&;",:\.\(\)% ]+\}\}' $srcfile | sort | uniq | sed -e 's/^{{//' -e 's/}}$//')
     local part=""
     for part in $parts; do
         unset IFS
