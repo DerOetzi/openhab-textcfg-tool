@@ -7,10 +7,10 @@ TARGET="$DIRECTORY/target"
 files=$(find "$DIRECTORY/src" -type f -printf "%P\n" | grep -v classic | grep -v parts)
 files="$files icons"
 
-service openhab2 stop
+docker service scale smarthome_openhab=0
 
 for file in $files ; do
     $DIRECTORY/tools/deploy.sh $file
 done
 
-service openhab2 start
+docker service scale smarthome_openhab=1
