@@ -20,6 +20,9 @@ else
     if [[ "$PROCESS" == "automation"* ]]; then
         DEPLOY_TARGET=${PROCESS/automation/automation\/jsr223\/python\/personal}
         cp -v $TARGET/$PROCESS /swarm/etc/openhab/$DEPLOY_TARGET
+    elif [[ "$PROCESS" == "lib"* ]]; then
+        DEPLOY_TARGET=${PROCESS/lib/automation\/lib\/python\/personal}
+        cp -v $TARGET/$PROCESS /swarm/etc/openhab/$DEPLOY_TARGET
     else
         cp -v $TARGET/$PROCESS /swarm/etc/openhab/$PROCESS
     fi
