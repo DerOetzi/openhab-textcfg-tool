@@ -17,5 +17,10 @@ echo Copy files to /swarm/etc/openhab/$PROCESS
 if [ -d "$TARGET/$PROCESS" ]; then
     cp -r -v $TARGET/$PROCESS /swarm/etc/openhab/
 else
-    cp -v $TARGET/$PROCESS /swarm/etc/openhab/$PROCESS
+    if [[ "$PROCESS" == "automation"* ]]; then
+        DEPLOY_TARGET=${PROCESS/automation/automation\/jsr223\/python\/personal}
+        cp -v $TARGET/$PROCESS /swarm/etc/openhab/$DEPLOY_TARGET
+    else
+        cp -v $TARGET/$PROCESS /swarm/etc/openhab/$PROCESS
+    fi
 fi
